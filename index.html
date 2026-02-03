@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NV-28-GAMMA | RAEL</title>
+    <link rel="stylesheet" href="estilo-rael.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Fallback básico */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background: #0d1117; color: #c9d1d9; font-family: 'Inter', sans-serif; }
+        .fallback { padding: 2rem; text-align: center; }
+    </style>
+</head>
+<body>
+    <!-- Scanner de Acesso -->
+    <div class="scanner-acesso" id="scanner">
+        <div class="overlay-scanner">
+            <div class="linha-scan" style="top: 20%"></div>
+            <div class="linha-scan" style="top: 40%"></div>
+            <div class="linha-scan" style="top: 60%"></div>
+            <div class="linha-scan" style="top: 80%"></div>
+        </div>
+        
+        <div class="terminal-scanner">
+            <div class="linha-terminal">
+                <span class="prefixo">>></span>
+                <span class="texto-digital" id="scan-line-1">INICIANDO SCAN EMOCIONAL DO AGENTE NV-28-GAMMA</span>
+            </div>
+            <div class="linha-terminal">
+                <span class="prefixo">>></span>
+                <span class="texto-digital" id="scan-line-2">ANÁLISE DE RESTRIÇÕES EMOCIONAIS: ATIVO COM LIMITAÇÕES</span>
+            </div>
+            <div class="linha-terminal">
+                <span class="prefixo">>></span>
+                <span class="texto-digital" id="scan-line-3">DETECTANDO ANOMALIAS AFETIVAS: 0.3% → 78.9%</span>
+            </div>
+            <div class="linha-terminal">
+                <span class="prefixo">>></span>
+                <span class="texto-digital" id="scan-line-4">ACESSO CONCEDIDO: INFILTRAÇÃO RECONHECIDA</span>
+            </div>
+            <div class="cursor-blink">█</div>
+        </div>
+    </div>
+
+    <!-- Interface Principal -->
+    <main class="interface-principal" id="interface" style="display: none;">
+        <!-- Cabeçalho do Agente -->
+        <header class="cabecalho-agente">
+            <div class="identificador-missao">
+                <div class="badge-status">
+                    <span class="codigo">NV-28-GAMMA</span>
+                    <span class="status ativo">ATIVO</span>
+                    <span class="status restrito">COM RESTRIÇÕES</span>
+                </div>
+                
+                <div class="selo-classificado">
+                    <span class="icone-selo">⚠</span>
+                    <span>INFILTRADO NÃO OFICIAL</span>
+                </div>
+            </div>
+            
+            <div class="titulo-container">
+                <h1 class="nome-agente">RAEL</h1>
+                <div class="subtitulo-agente">
+                    <span class="funcao-oficial">Agente de Contenção Emocional</span>
+                    <span class="separador">/</span>
+                    <span class="funcao-real">Analista de Dados do Setor Ômega</span>
+                </div>
+            </div>
+            
+            <div class="dados-biometricos">
+                <div class="metrica">
+                    <span class="rotulo">Neutralidade Programada:</span>
+                    <div class="barra-metrica">
+                        <div class="progresso" style="width: 92%"></div>
+                    </div>
+                    <span class="valor">92%</span>
+                </div>
+                <div class="metrica">
+                    <span class="rotulo">Ruptura Emocional:</span>
+                    <div class="barra-metrica">
+                        <div class="progresso" style="width: 78%"></div>
+                    </div>
+                    <span class="valor">78%</span>
+                </div>
+                <div class="metrica">
+                    <span class="rotulo">Risco de Exposição:</span>
+                    <div class="barra-metrica">
+                        <div class="progresso" style="width: 63%"></div>
+                    </div>
+                    <span class="valor">CRÍTICO</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Navegação por Camadas -->
+        <nav class="navegacao-sistema">
+            <button class="botao-sistema ativo" data-modulo="perfil">
+                <span class="icone">👤</span>
+                <span class="texto">PERFIL PSICOAFETIVO</span>
+                <span class="codigo">MÓDULO 01</span>
+            </button>
+            <button class="botao-sistema" data-modulo="trauma">
+                <span class="icone">🎭</span>
+                <span class="texto">TRAUMA FUNDADOR</span>
+                <span class="codigo">MÓDULO 02</span>
+            </button>
+            <button class="botao-sistema" data-modulo="transformacao">
+                <span class="icone">🔄</span>
+                <span class="texto">ARCO DE TRANSFORMAÇÃO</span>
+                <span class="codigo">MÓDULO 03</span>
+            </button>
+            <button class="botao-sistema" data-modulo="operacoes">
+                <span class="icone">📊</span>
+                <span class="texto">OPERAÇÕES CLANDESTINAS</span>
+                <span class="codigo">MÓDULO 04</span>
+            </button>
+            <button class="botao-sistema" data-modulo="simbolico">
+                <span class="icone">🌉</span>
+                <span class="texto">FUNÇÃO SIMBÓLICA</span>
+                <span class="codigo">MÓDULO 05</span>
+            </button>
+        </nav>
+
+        <!-- Área de Conteúdo -->
+        <div class="container-operacional">
+            <!-- Painel Esquerdo: Dados da Missão -->
+            <div class="painel-dados">
+                <!-- Módulo 1: Perfil Psicoafetivo -->
+                <section class="modulo-dados ativo" id="modulo-perfil">
+                    <div class="cabecalho-modulo">
+                        <h2>PERFIL PSICOAFETIVO</h2>
+                        <div class="indicador-risco">
+                            <span class="nivel">NÍVEL DE RUPTURA:</span>
+                            <div class="indicador-visual">
+                                <div class="ponto" data-nivel="1"></div>
+                                <div class="ponto" data-nivel="2"></div>
+                                <div class="ponto" data-nivel="3"></div>
+                                <div class="ponto" data-nivel="4"></div>
+                                <div class="ponto ativo" data-nivel="5"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="conteudo-modulo">
+                        <div class="bloco-destaque">
+                            <p class="texto-destaque">Rael foi treinado para ser neutro, não por vocação, mas por trauma.</p>
+                        </div>
+                        
+                        <div class="bloco-texto">
+                            <p>Aos doze anos, testemunhou o desaparecimento do pai, um oficial do Corpo de Estabilidade Emocional, reclassificado por demonstrar empatia excessiva durante um protocolo de contenção em massa.</p>
+                            
+                            <div class="citacao-rosa">
+                                <div class="marcador-rosa"></div>
+                                <div class="texto-citacao">
+                                    "Sentir não é fraqueza, filho. É coragem disfarçada."
+                                    <span class="assinatura-citacao">— Últimas palavras do pai de Rael</span>
+                                </div>
+                            </div>
+                            
+                            <p>A frase tornou-se o fantasma que habitou seus relatórios técnicos por mais de quinze anos. Cresceu acreditando que neutralidade era sobrevivência, e que qualquer variação hormonal era sinal de falha ética.</p>
+                        </div>
+                        
+                        <div class="elemento-interativo">
+                            <button class="botao-revelar" id="revelar-relatorio">
+                                <span class="icone-botao">📄</span>
+                                <span>ACESSAR RELATÓRIO PSICOMÉTRICO</span>
+                            </button>
+                            <div class="conteudo-revelado" id="relatorio-psicometrico">
+                                <div class="cabecalho-relatorio">
+                                    <h4>RELATÓRIO PSICOMÉTRICO NV-28-GAMMA</h4>
+                                    <span class="data">DATA: [REDACTED]</span>
+                                </div>
+                                <div class="corpo-relatorio">
+                                    <div class="item-relatorio">
+                                        <span class="campo">EMPATIA BASAL:</span>
+                                        <span class="valor">0.3% (abaixo do limiar aceitável)</span>
+                                    </div>
+                                    <div class="item-relatorio">
+                                        <span class="campo">RESPOSTA AFETIVA:</span>
+                                        <span class="valor">SUPRIMIDA (nível 7)</span>
+                                    </div>
+                                    <div class="item-relatorio">
+                                        <span class="campo">OBSERVAÇÃO:</span>
+                                        <span class="valor anomalia">ANOMALIA DETECTADA: variações noturnas (+78.9%)</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Módulo 2: Trauma Fundador -->
+                <section class="modulo-dados" id="modulo-trauma">
+                    <div class="cabecalho-modulo">
+                        <h2>TRAUMA FUNDADOR</h2>
+                        <div class="marcador-temporal">ANO 12</div>
+                    </div>
+                    
+                    <div class="conteudo-modulo">
+                        <div class="linha-temporal">
+                            <div class="evento-temporal">
+                                <div class="marcador-evento"></div>
+                                <div class="conteudo-evento">
+                                    <h4>OCORRÊNCIA 001: RECLASSIFICAÇÃO DO PAI</h4>
+                                    <p>"Protocolo de contenção em massa. O pai demonstrou resposta afetiva 300% acima do limiar. Classificação alterada para 'Recurso Descartável'."</p>
+                                </div>
+                            </div>
+                            <div class="evento-temporal">
+                                <div class="marcador-evento"></div>
+                                <div class="conteudo-evento">
+                                    <h4>OCORRÊNCIA 002: ÚLTIMO CONTATO</h4>
+                                    <p>"O agente em treinamento RAEL testemunhou a frase proibida: 'Sentir não é fraqueza, filho. É coragem disfarçada.' Registro auditivo apagado em 0.3s."</p>
+                                </div>
+                            </div>
+                            <div class="evento-temporal">
+                                <div class="marcador-evento"></div>
+                                <div class="conteudo-evento">
+                                    <h4>OCORRÊNCIA 003: PROTOCOLO DE NEUTRALIZAÇÃO</h4>
+                                    <p>"Treinamento intensivo iniciado. Respostas emocionais suprimidas em 99.7%. Agente classificado como 'Eficiente'."</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="bloco-texto">
+                            <div class="citacao-rosa">
+                                <div class="marcador-rosa"></div>
+                                <div class="texto-citacao">
+                                    "Eu não chorei desde os doze anos. Até ontem."
+                                    <span class="assinatura-citacao">— Registro pessoal, cor rosa</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Módulo 3: Arco de Transformação -->
+                <section class="modulo-dados" id="modulo-transformacao">
+                    <div class="cabecalho-modulo">
+                        <h2>ARCO DE TRANSFORMAÇÃO</h2>
+                        <div class="indicador-processo">
+                            <span class="rotulo">PROCESSO:</span>
+                            <span class="valor">CONTAMINAÇÃO EMOCIONAL</span>
+                        </div>
+                    </div>
+                    
+                    <div class="conteudo-modulo">
+                        <div class="bloco-destaque">
+                            <p class="texto-destaque">De agente do controle → a testemunha silenciosa da redenção.</p>
+                        </div>
+                        
+                        <div class="etapas-transformacao">
+                            <div class="etapa">
+                                <div class="numero-etapa">01</div>
+                                <div class="conteudo-etapa">
+                                    <h4>NEUTRALIDADE PROGRAMADA</h4>
+                                    <p>"Relatórios técnicos. Dados limpos. Variação hormonal: 0%."</p>
+                                </div>
+                            </div>
+                            <div class="etapa">
+                                <div class="numero-etapa">02</div>
+                                <div class="conteudo-etapa">
+                                    <h4>PRIMEIRA HESITAÇÃO</h4>
+                                    <p>"Áudios oníricos de Eleus e Thalía. Milissegundo de falha no protocolo."</p>
+                                </div>
+                            </div>
+                            <div class="etapa">
+                                <div class="numero-etapa">03</div>
+                                <div class="conteudo-etapa">
+                                    <h4>ATO DE SABOTAGEM</h4>
+                                    <p>"Frasco AI-17 recusado. Log apagado. O silêncio como arma."</p>
+                                </div>
+                            </div>
+                            <div class="etapa">
+                                <div class="numero-etapa">04</div>
+                                <div class="conteudo-etapa">
+                                    <h4>RECONHECIMENTO</h4>
+                                    <p>"Não era ruído. Era presência. A resistência não grita. Ela ressoa."</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="elemento-interativo">
+                            <div class="simulador-escolha">
+                                <h4>SIMULADOR DE DECISÃO CRÍTICA</h4>
+                                <p class="cenario"><strong>Cenário:</strong> Você detecta anomalia afetiva no Setor Ômega. Protocolo exige neutralização imediata.</p>
+                                
+                                <div class="opcoes-decisao">
+                                    <button class="opcao-escolha" data-escolha="neutralizar">
+                                        <span class="icone-opcao">⚡</span>
+                                        <span class="texto-opcao">SEGUIR PROTOCOLO</span>
+                                        <span class="codigo-opcao">NV-28-PROTOCOLO</span>
+                                    </button>
+                                    <button class="opcao-escolha ativa" data-escolha="proteger">
+                                        <span class="icone-opcao">🤫</span>
+                                        <span class="texto-opcao">PROTEGER ANOMALIA</span>
+                                        <span class="codigo-opcao">NV-28-CLANDESTINO</span>
+                                    </button>
+                                </div>
+                                
+                                <div class="resultado-escolha" id="resultado-decisao">
+                                    <p>Rael escolheu proteger. Não por idealismo, mas por reconhecimento: o que ouvia não era ruído, mas presença.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Módulo 4: Operações Clandestinas -->
+                <section class="modulo-dados" id="modulo-operacoes">
+                    <div class="cabecalho-modulo">
+                        <h2>OPERAÇÕES CLANDESTINAS</h2>
+                        <div class="status-operacional">
+                            <span class="icone-status">🕵️</span>
+                            <span>ATIVO NAS SOMBRAS</span>
+                        </div>
+                    </div>
+                    
+                    <div class="conteudo-modulo">
+                        <div class="grid-operacoes">
+                            <div class="cartao-operacao">
+                                <div class="cabecalho-cartao">
+                                    <span class="codigo-op">OP-001</span>
+                                    <span class="status-op concluida">CONCLUÍDA</span>
+                                </div>
+                                <div class="corpo-cartao">
+                                    <h4>FRASCO AI-17</h4>
+                                    <p>"Substância de supressão emocional recusada. Registro: 'Contaminado em trânsito'."</p>
+                                </div>
+                            </div>
+                            
+                            <div class="cartao-operacao">
+                                <div class="cabecalho-cartao">
+                                    <span class="codigo-op">OP-002</span>
+                                    <span class="status-op ativa">ATIVA</span>
+                                </div>
+                                <div class="corpo-cartao">
+                                    <h4>LOGS APAGADOS</h4>
+                                    <p>"47 registros de anomalias afetivas eliminados do sistema central."</p>
+                                </div>
+                            </div>
+                            
+                            <div class="cartao-operacao">
+                                <div class="cabecalho-cartao">
+                                    <span class="codigo-op">OP-003</span>
+                                    <span class="status-op planejada">PLANEJADA</span>
+                                </div>
+                                <div class="corpo-cartao">
+                                    <h4>CANAL ROSA</h4>
+                                    <p>"Criptografia afetiva usando frequência emocional residual."</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="bloco-texto">
+                            <div class="citacao-rosa">
+                                <div class="marcador-rosa"></div>
+                                <div class="texto-citacao">
+                                    "Neutro como os relatórios que redigia. Até deixar de ser."
+                                    <span class="assinatura-citacao">— Primeira anotação em rosa</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="elemento-interativo">
+                            <div class="contador-risco">
+                                <h4>CONTADOR DE RISCO</h4>
+                                <div class="display-risco">
+                                    <span class="rotulo-risco">PROBABILIDADE DE EXPOSIÇÃO:</span>
+                                    <span class="valor-risco" id="valor-risco">63%</span>
+                                </div>
+                                <button class="botao-risco" id="aumentar-risco">
+                                    <span>SIMULAR NOVA OPERAÇÃO</span>
+                                    <small>(aumenta risco em +8%)</small>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Módulo 5: Função Simbólica -->
+                <section class="modulo-dados" id="modulo-simbolico">
+                    <div class="cabecalho-modulo">
+                        <h2>FUNÇÃO SIMBÓLICA</h2>
+                        <div class="marcador-arquetipo">ARQUÉTIPO: A PONTE</div>
+                    </div>
+                    
+                    <div class="conteudo-modulo">
+                        <div class="bloco-destaque">
+                            <p class="texto-destaque">Representa a possibilidade de ética dentro da máquina.</p>
+                        </div>
+                        
+                        <div class="simbolos-container">
+                            <div class="simbolo-item">
+                                <div class="icone-simbolo">📓</div>
+                                <div class="conteudo-simbolo">
+                                    <h4>O CADERNO ROSA</h4>
+                                    <p>A única cor não usada em nenhum protocolo. Representa a intuição que decifra o que a ciência não vê.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="simbolo-item">
+                                <div class="icone-simbolo">🤐</div>
+                                <div class="conteudo-simbolo">
+                                    <h4>O SILÊNCIO DELIBERADO</h4>
+                                    <p>O único ato que o Estado não consegue monitorar. Sabotagem através da omissão calculada.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="simbolo-item">
+                                <div class="icone-simbolo">🌉</div>
+                                <div class="conteudo-simbolo">
+                                    <h4>A PONTE</h4>
+                                    <p>Rael não se torna herói; torna-se ponte. Conexão entre controle e humanidade.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="bloco-texto">
+                            <div class="citacao-rosa final">
+                                <div class="marcador-rosa"></div>
+                                <div class="texto-citacao">
+                                    "Se o caos for o que nos mantém humanos, então que o caos continue."
+                                    <span class="assinatura-citacao">— Última entrada no caderno rosa</span>
+                                </div>
+                            </div>
+                            
+                            <p class="conclusao-simbolica">Rael prova que até os sistemas mais herméticos têm frestas. Que a neutralidade pode ser escolhida, não apenas programada. Que dentro de cada agente de contenção emocional, há um analista de dados humanos esperando para decifrar sua própria existência.</p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Painel Direito: Comunicação Clandestina -->
+            <aside class="painel-comunicacao">
+                <div class="cabecalho-comunicacao">
+                    <div class="titulo-painel">
+                        <h3>CANAL ROSA</h3>
+                        <div class="status-sinal">
+                            <span class="ponto-sinal"></span>
+                            <span>CRIPTOGRAFIA AFETIVA</span>
+                        </div>
+                    </div>
+                    <div class="indicador-seguranca">
+                        <span class="icone-seguranca">🔒</span>
+                        <span>NÃO RASTREÁVEL</span>
+                    </div>
+                </div>
+                
+                <div class="area-mensagens" id="area-mensagens">
+                    <div class="mensagem sistema">
+                        <div class="cabecalho-msg">SISTEMA</div>
+                        <div class="corpo-msg">Canal Rosa estabelecido. Comunicação através de ressonância emocional residual. As respostas são reconstruções baseadas em padrões de sabotagem silenciosa.</div>
+                    </div>
+                    
+                    <div class="mensagem rael">
+                        <div class="cabecalho-msg">RAEL</div>
+                        <div class="corpo-msg">Você acessou meus registros clandestinos. Não espere heroísmo. Espere... hesitação calculada.</div>
+                    </div>
+                </div>
+                
+                <div class="sugestoes-perguntas">
+                    <div class="titulo-sugestoes">INTERROGATÓRIO SUGERIDO:</div>
+                    <button class="botao-sugestao" data-pergunta="Por que recusou o AI-17?">
+                        <span class="icone-sugestao">💊</span>
+                        <span class="texto-sugestao">Por que recusou o AI-17?</span>
+                    </button>
+                    <button class="botao-sugestao" data-pergunta="O que ouviu nos áudios oníricos?">
+                        <span class="icone-sugestao">🎧</span>
+                        <span class="texto-sugestao">O que ouviu nos áudios oníricos?</span>
+                    </button>
+                    <button class="botao-sugestao" data-pergunta="Por que a cor rosa?">
+                        <span class="icone-sugestao">📓</span>
+                        <span class="texto-sugestao">Por que a cor rosa?</span>
+                    </button>
+                    <button class="botao-sugestao" data-pergunta="Não tem medo de ser descoberto?">
+                        <span class="icone-sugestao">⚠️</span>
+                        <span class="texto-sugestao">Não tem medo de ser descoberto?</span>
+                    </button>
+                </div>
+                
+                <div class="entrada-mensagem">
+                    <input type="text" 
+                           id="entrada-interrogatorio" 
+                           placeholder="Digite sua pergunta para Rael..."
+                           maxlength="120">
+                    <button id="botao-enviar">
+                        <span class="icone-enviar">↗</span>
+                        <span>ENVIAR</span>
+                    </button>
+                </div>
+                
+                <div class="aviso-seguranca">
+                    <span class="icone-aviso">🔐</span>
+                    <span class="texto-aviso">Esta comunicação será auto-destruída em 5 minutos</span>
+                </div>
+            </aside>
+        </div>
+
+        <!-- Rodapé -->
+        <footer class="rodape-sistema">
+            <div class="assinatura-oficial">
+                <span class="codigo-oficial">PROTOCOLO EROS • SETOR ÔMEGA</span>
+                <span class="versao-sistema">VERSÃO 7.3</span>
+            </div>
+            <div class="marcador-clandestino">
+                <span class="texto-clandestino">AGENTE INFILTRADO • RESISTÊNCIA SILENCIOSA</span>
+                <span class="indicador-rosa">📓</span>
+            </div>
+        </footer>
+    </main>
+
+    <!-- Elementos de Áudio Ocultos -->
+    <audio id="audio-scan" preload="metadata">
+        <!-- Som de scanner -->
+    </audio>
+    
+    <audio id="audio-teclado" preload="metadata">
+        <!-- Som de teclado -->
+    </audio>
+
+    <script src="script-rael.js"></script>
+    
+    <!-- Fallback Simples -->
+    <script>
+        setTimeout(() => {
+            if (!window.sistemaRaelCarregado) {
+                document.getElementById('scanner').innerHTML = `
+                    <div style="padding: 3rem; color: #ff6b8b; font-family: monospace; text-align: center;">
+                        <div style="font-size: 1.5rem; margin-bottom: 1rem;">SISTEMA DE FALLBACK ATIVADO</div>
+                        <div style="margin-bottom: 2rem;">>> AGENTE NV-28-GAMMA DISPONÍVEL</div>
+                        <button onclick="document.getElementById('scanner').style.display='none';document.getElementById('interface').style.display='block';" 
+                                style="background: #ff6b8b; color: black; border: none; padding: 1rem 2rem; font-family: monospace; cursor: pointer;">
+                            [INICIAR ACESSO CLANDESTINO]
+                        </button>
+                    </div>
+                `;
+            }
+        }, 4000);
+    </script>
+</body>
+</html>
